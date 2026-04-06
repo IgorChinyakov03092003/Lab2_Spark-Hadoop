@@ -1,0 +1,22 @@
+[
+    {
+        "experiment": "1Node_Opt-False",
+        "duration_sec": 46.0,
+        "ram_cluster_mb": 2.07
+    },
+    {
+        "experiment": "1Node_Opt-True",
+        "duration_sec": 56.01,
+        "ram_cluster_mb": 0.62
+    },
+    {
+        "experiment": "3Node_Opt-False",
+        "duration_sec": 36.79,
+        "ram_cluster_mb": 3.77
+    },
+    {
+        "experiment": "3Node_Opt-True",
+        "duration_sec": 35.27,
+        "ram_cluster_mb": 647.33
+    }
+]
