@@ -64,4 +64,4 @@ services:
       resources:
         limits:
           cpus: '2.0'
-          memory: 4G # так много нужно, чтобы запустить --multiply 5
+          memory: 4G # так много нужно, чтобы запустить --multiply 3
