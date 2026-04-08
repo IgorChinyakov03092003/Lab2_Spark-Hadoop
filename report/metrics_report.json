@@ -1,56 +1,84 @@
 [
     {
         "experiment": "1Node_Opt-False",
-        "total_duration_sec": 37.51,
-        "ram_cluster_mb": 79.26,
-        "stages": {
-            "0_load_data": 9.8,
-            "1_category_baseline": 3.91,
-            "2_user_profiling": 3.57,
-            "3_whale_products": 6.22,
-            "4_window_ranking": 5.82,
-            "5_final_aggregation": 8.18
+        "execution_time_sec": 32.38,
+        "memory_used_mb": 87.56,
+        "spark_api_metrics": {
+            "jobs_count": 29,
+            "stages_count": 61,
+            "stages_completed": 29,
+            "shuffle_read_mb": 96.08,
+            "shuffle_write_mb": 96.08
+        },
+        "stages_timing": {
+            "0_load_data": 9.51,
+            "1_category_baseline": 3.34,
+            "2_user_profiling": 2.81,
+            "3_whale_products": 5.62,
+            "4_window_ranking": 4.72,
+            "5_final_aggregation": 6.37
         }
     },
     {
         "experiment": "1Node_Opt-True",
-        "total_duration_sec": 29.98,
-        "ram_cluster_mb": 75.34,
-        "stages": {
-            "0_load_data": 11.23,
-            "0_optimization_overhead": 9.36,
-            "1_category_baseline": 1.2,
-            "2_user_profiling": 0.72,
-            "3_whale_products": 2.77,
-            "4_window_ranking": 2.22,
-            "5_final_aggregation": 2.48
+        "execution_time_sec": 26.32,
+        "memory_used_mb": 71.35,
+        "spark_api_metrics": {
+            "jobs_count": 23,
+            "stages_count": 58,
+            "stages_completed": 23,
+            "shuffle_read_mb": 142.69,
+            "shuffle_write_mb": 142.69
+        },
+        "stages_timing": {
+            "0_load_data": 8.98,
+            "0_optimization_overhead": 8.52,
+            "1_category_baseline": 1.11,
+            "2_user_profiling": 0.8,
+            "3_whale_products": 2.7,
+            "4_window_ranking": 1.88,
+            "5_final_aggregation": 2.33
         }
     },
     {
         "experiment": "3Node_Opt-False",
-        "total_duration_sec": 27.32,
-        "ram_cluster_mb": 87.08,
-        "stages": {
-            "0_load_data": 9.11,
-            "1_category_baseline": 2.82,
-            "2_user_profiling": 2.26,
-            "3_whale_products": 4.64,
-            "4_window_ranking": 3.87,
-            "5_final_aggregation": 4.62
+        "execution_time_sec": 23.9,
+        "memory_used_mb": 84.8,
+        "spark_api_metrics": {
+            "jobs_count": 29,
+            "stages_count": 61,
+            "stages_completed": 29,
+            "shuffle_read_mb": 101.44,
+            "shuffle_write_mb": 101.44
+        },
+        "stages_timing": {
+            "0_load_data": 8.01,
+            "1_category_baseline": 2.56,
+            "2_user_profiling": 1.83,
+            "3_whale_products": 3.91,
+            "4_window_ranking": 3.47,
+            "5_final_aggregation": 4.11
         }
     },
     {
         "experiment": "3Node_Opt-True",
-        "total_duration_sec": 24.51,
-        "ram_cluster_mb": 94.79,
-        "stages": {
-            "0_load_data": 8.88,
-            "0_optimization_overhead": 5.85,
+        "execution_time_sec": 22.12,
+        "memory_used_mb": 83.88,
+        "spark_api_metrics": {
+            "jobs_count": 23,
+            "stages_count": 59,
+            "stages_completed": 23,
+            "shuffle_read_mb": 144.29,
+            "shuffle_write_mb": 144.29
+        },
+        "stages_timing": {
+            "0_load_data": 7.89,
+            "0_optimization_overhead": 4.92,
             "1_category_baseline": 1.38,
-            "2_user_profiling": 1.01,
-            "3_whale_products": 2.97,
-            "4_window_ranking": 1.92,
-            "5_final_aggregation": 2.5
+            "2_user_profiling": 0.81,
+            "3_whale_products": 2.82,
+            "4_window_ranking": 2.05,
+            "5_final_aggregation": 2.24
         }
     }
 ]

@@ -18,7 +18,7 @@ def plot_heatmap(input_file="report/metrics_report.json", output_dir="report/ima
     # Извлекаем все уникальные названия стадий и сортируем их (ось X)
     all_stages = set()
     for run in data:
-        all_stages.update(run.get("stages", {}).keys())
+        all_stages.update(run.get("stages_timing", {}).keys())
     stages = list(all_stages)
     stages.sort()
 
@@ -29,7 +29,7 @@ def plot_heatmap(input_file="report/metrics_report.json", output_dir="report/ima
     matrix = np.zeros((len(experiments), len(stages)))
     for i, run in enumerate(data):
         for j, stage in enumerate(stages):
-            matrix[i, j] = run.get("stages", {}).get(stage, 0)
+            matrix[i, j] = run.get("stages_timing", {}).get(stage, 0)
 
     # Настраиваем размер графика динамически
     fig, ax = plt.subplots(figsize=(10 + len(stages) * 0.5, max(5, len(experiments) * 1.5)))

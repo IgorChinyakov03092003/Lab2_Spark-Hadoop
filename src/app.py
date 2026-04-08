@@ -105,20 +105,20 @@ def main():
     parser.add_argument("--multiply", type=int, default=1, help="Number of multiplication for current dataset")
     args = parser.parse_args()
 
-    logger = get_logger()
-    tracker = MetricsTracker()
+    experiment_name = f"{args.nodes}Node_Opt-{args.optimized}"
+    logger = get_logger(experiment_name)
 
     logger.info("Initializing application...")
     spark = create_spark_session(args.optimized)
 
+    # Передаем контекст в трекер для доступа к API
+    tracker = MetricsTracker(spark.sparkContext)
     tracker.start()
 
-    # Загрузка данных
     tracker.start_stage("0_load_data")
     df_purchases = load_and_clean_data(spark, DATA_PATH, args.multiply)
     tracker.end_stage()
 
-    # Оптимизация (если включена)
     if args.optimized:
         tracker.start_stage("0_optimization_overhead")
         df_optimized = apply_optimizations(df_purchases, spark, logger)
@@ -126,21 +126,33 @@ def main():
     else:
         df_optimized = df_purchases
 
-    # Запуск тяжелого пайплайна
     run_heavy_pipeline(df_optimized, tracker, logger)
 
     tracker.stop()
 
-    # Сбор статистики
-    duration = tracker.get_total_duration()
-    stages_duration = tracker.get_stages_duration()
-    ram = get_cluster_ram_used_mb(spark)
-    experiment_name = f"{args.nodes}Node_Opt-{args.optimized}"
+    # Сбор базовой статистики
+    total_time = tracker.get_total_duration()
+    stage_timings = tracker.get_stages_duration()
+    ram_usage = get_cluster_ram_used_mb(spark)
 
-    logger.info(f"Experiment {experiment_name} finished in {duration:.2f} seconds.")
-    logger.info(f"Cluster RAM Used (Storage): {ram:.2f} MB")
+    # Сбор расширенной статистики через REST
+    logger.info("Extracting advanced performance metrics...")
+    api_metrics = tracker.collect_api_stats(logger)
 
-    save_report(experiment_name, duration, stages_duration, ram, "/report/metrics_report.json")
+    logger.info(f"Pipeline '{experiment_name}' completed in {total_time:.2f}s.")
+    logger.info(f"Final Hardware & API Stats -> RAM Used: {ram_usage:.1f} MB | "
+                f"Jobs: {api_metrics['total_jobs']} | "
+                f"Stages Done: {api_metrics['completed_stages']}/{api_metrics['total_stages']} | "
+                f"Shuffle: {api_metrics['shuffle_read_mb']:.1f}MB (In) / {api_metrics['shuffle_write_mb']:.1f}MB (Out)")
+
+    save_report(
+        exp_name=experiment_name,
+        runtime=total_time,
+        stage_times=stage_timings,
+        cluster_ram=ram_usage,
+        api_stats=api_metrics,
+        output_file="/report/metrics_report.json"
+    )
 
     logger.info("Sleeping for 1 minute to allow UI check...")
     time.sleep(60)

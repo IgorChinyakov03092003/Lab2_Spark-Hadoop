@@ -1,0 +1,62 @@
+20:14:45 [INFO] Initializing application...
+20:14:57 [INFO] Applying optimization: repartition (24 partitions) and cache...
+20:15:02 [INFO] Rows loaded to cache: 3533286
+20:15:02 [INFO] Executing Stage 1: Category Baseline
+20:15:03 [INFO] Executing Stage 2: User Profiling
+20:15:04 [INFO] Executing Stage 3: Whale Product Analysis
+20:15:07 [INFO] Executing Stage 4: Window Ranking Products
+20:15:09 [INFO] Executing Stage 5: Final Aggregation
+20:15:11 [INFO] Extracting advanced performance metrics...
+20:15:13 [INFO] 
+[Stage Overview] Total recorded: 59
+20:15:13 [INFO]  -> [ID: 0] csv at NativeMethodAccessorImpl.java:0 | Tasks: 1 | R/W: 0.00MB / 0.00MB
+20:15:13 [INFO]  -> [ID: 1] csv at NativeMethodAccessorImpl.java:0 | Tasks: 6 | R/W: 0.00MB / 0.00MB
+20:15:13 [INFO]  -> [ID: 2] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 6 | R/W: 0.00MB / 127.36MB
+20:15:13 [INFO]  -> [ID: 4] count at NativeMethodAccessorImpl.java:0 | Tasks: 24 | R/W: 127.36MB / 0.00MB
+20:15:13 [INFO]  -> [ID: 6] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 24 | R/W: 0.00MB / 0.00MB
+20:15:13 [INFO]  -> [ID: 9] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 1 | R/W: 0.00MB / 0.00MB
+20:15:13 [INFO]  -> [ID: 11] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 24 | R/W: 0.00MB / 0.28MB
+20:15:13 [INFO]  -> [ID: 14] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 1 | R/W: 0.28MB / 0.00MB
+20:15:13 [INFO]  -> [ID: 18] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 1 | R/W: 0.00MB / 0.00MB
+20:15:13 [INFO]  -> [ID: 20] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 24 | R/W: 0.00MB / 0.00MB
+20:15:13 [INFO]  -> [ID: 23] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 1 | R/W: 0.00MB / 0.00MB
+20:15:13 [INFO]  -> [ID: 25] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 24 | R/W: 0.00MB / 4.29MB
+20:15:13 [INFO]  -> [ID: 28] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 4 | R/W: 4.29MB / 0.00MB
+20:15:13 [INFO]  -> [ID: 32] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 1 | R/W: 0.00MB / 0.00MB
+20:15:13 [INFO]  -> [ID: 34] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 24 | R/W: 0.00MB / 5.73MB
+20:15:13 [INFO]  -> [ID: 37] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 5 | R/W: 5.73MB / 0.13MB
+20:15:13 [INFO]  -> [ID: 41] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 1 | R/W: 0.13MB / 0.00MB
+20:15:13 [INFO]  -> [ID: 46] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 1 | R/W: 0.00MB / 0.00MB
+20:15:13 [INFO]  -> [ID: 48] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 24 | R/W: 0.00MB / 0.59MB
+20:15:13 [INFO]  -> [ID: 49] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 24 | R/W: 0.00MB / 5.73MB
+20:15:13 [INFO]  -> [ID: 51] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 1 | R/W: 0.59MB / 0.00MB
+20:15:13 [INFO]  -> [ID: 54] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 5 | R/W: 5.73MB / 0.18MB
+20:15:13 [INFO]  -> [ID: 58] $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768 | Tasks: 1 | R/W: 0.18MB / 0.00MB
+20:15:13 [INFO] 
+[Job Overview] Success: 23 / Total: 23
+20:15:13 [INFO]  -> [Job 0] Linked stages: [0] | csv at NativeMethodAccessorImpl.java:0
+20:15:13 [INFO]  -> [Job 1] Linked stages: [1] | csv at NativeMethodAccessorImpl.java:0
+20:15:13 [INFO]  -> [Job 2] Linked stages: [2] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 3] Linked stages: [3, 4] | count at NativeMethodAccessorImpl.java:0
+20:15:13 [INFO]  -> [Job 4] Linked stages: [5, 6] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 5] Linked stages: [7, 8, 9] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 6] Linked stages: [10, 11] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 7] Linked stages: [12, 13, 14] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 8] Linked stages: [16, 17, 18, 15] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 9] Linked stages: [19, 20] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 10] Linked stages: [21, 22, 23] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 11] Linked stages: [24, 25] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 12] Linked stages: [26, 27, 28] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 13] Linked stages: [32, 29, 30, 31] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 14] Linked stages: [33, 34] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 15] Linked stages: [35, 36, 37] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 16] Linked stages: [38, 39, 40, 41] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 17] Linked stages: [42, 43, 44, 45, 46] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 18] Linked stages: [48, 47] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 19] Linked stages: [49, 47] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 20] Linked stages: [50, 51, 47] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 21] Linked stages: [52, 53, 54] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO]  -> [Job 22] Linked stages: [55, 56, 57, 58] | $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+20:15:13 [INFO] Pipeline '3Node_Opt-True' completed in 22.12s.
+20:15:13 [INFO] Final Hardware & API Stats -> RAM Used: 83.9 MB | Jobs: 23 | Stages Done: 23/59 | Shuffle: 144.3MB (In) / 144.3MB (Out)
+20:15:13 [INFO] Sleeping for 1 minute to allow UI check...
